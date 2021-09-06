@@ -38,7 +38,9 @@ end
 local function plugin_load()
     local use = packer.use
     local ui_cfg = require 'plugin.ui.config'
+    local tool_cfg = require 'plugin.tool.config'
     use {'wbthomason/packer.nvim'}
+    -- UI
     use {
         'liang-junming/vim-sialoquent',
         config = ui_cfg.color_theme()
@@ -49,10 +51,18 @@ local function plugin_load()
         event = 'BufWinEnter',
         config = ui_cfg.dashboard()
     }
+
+    -- TOOLS
     use {
         'nvim-telescope/telescope.nvim',
-        requires = { 'nvim-lua/plenary.nvim' }
+        requires = { 'nvim-lua/plenary.nvim' },
+        config = tool_cfg.telescop()
     }
+    use {
+        "folke/which-key.nvim",
+        config = tool_cfg.which_key()
+    }
+
     packer.install()
 end
 

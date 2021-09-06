@@ -21,7 +21,7 @@ common.set_option = function()
 end
 
 common.set_global = function ()
-    vim.g.mapleader = '<Space>'
+    vim.g.mapleader = ' '
     vim.g.maplocalleader = ';'
 end
 
