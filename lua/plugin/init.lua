@@ -1,6 +1,6 @@
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-local compile_path = fn.stdpath('data') .. '/site/pack/packer/packer_compiled.lua'
+local compile_path = fn.stdpath('data') .. '/site/lua/packer_compiled.lua'
 local packer = nil
 
 local function promise_packer_install()
@@ -35,7 +35,7 @@ local function regist_packer_cmd()
     cmd [[command! PackerCompile packadd packer.nvim | lua require('packer').compile()]]
 end
 
-local function plugin_install()
+local function plugin_load()
     local use = packer.use
     local ui_cfg = require 'plugin.ui.config'
     use {'wbthomason/packer.nvim'}
@@ -43,10 +43,34 @@ local function plugin_install()
         'liang-junming/vim-sialoquent',
         config = ui_cfg.color_theme()
     }
+    use {
+        'glepnir/dashboard-nvim',
+        opt = true,
+        event = 'BufWinEnter',
+        config = ui_cfg.dashboard()
+    }
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = { 'nvim-lua/plenary.nvim' }
+    }
     packer.install()
+end
+
+local function plugin_load_compiled()
+    if vim.fn.filereadable(compile_path) == 1 then
+        require 'packer_compiled'
+    else
+        dump('Missing packer compile file Run PackerCompile Or PackerSync to fix')
+    end
+end
+
+local function after_plugin_load()
+    vim.cmd [[colorscheme sialoquent]]
 end
 
 promise_packer_install()
 packer_init()
 regist_packer_cmd()
-plugin_install()
+plugin_load()
+plugin_load_compiled()
+after_plugin_load()
