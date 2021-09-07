@@ -4,7 +4,7 @@ config.telescop = function ()
     require('telescope').setup {
         defaults = {
             prompt_prefix = '🔍 ',
-            selection_caret = 'ﰲ ',
+            selection_caret = '● ',
             entry_prefix = "  ",
         }
     }
