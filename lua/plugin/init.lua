@@ -66,6 +66,13 @@ local function plugin_load()
         'kyazdani42/nvim-tree.lua',
         config = ui_cfg.nvimtree()
     }
+    use {
+        'lewis6991/gitsigns.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim'
+        },
+        config = ui_cfg.gitsigns()
+    }
 
     -- TOOLS
     use {
