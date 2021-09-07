@@ -73,6 +73,10 @@ local function plugin_load()
         },
         config = ui_cfg.gitsigns()
     }
+    use {
+        'lukas-reineke/indent-blankline.nvim',
+        config = ui_cfg.indent_blankline()
+    }
 
     -- TOOLS
     use {
