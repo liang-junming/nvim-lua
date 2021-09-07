@@ -51,6 +51,9 @@ local function plugin_load()
         event = 'BufWinEnter',
         config = ui_cfg.dashboard()
     }
+    use {
+        'kyazdani42/nvim-web-devicons'
+    }
 
     -- TOOLS
     use {
