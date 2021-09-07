@@ -52,12 +52,15 @@ local function plugin_load()
         config = ui_cfg.dashboard()
     }
     use {
-        'kyazdani42/nvim-web-devicons',
-        opt = true
+        'kyazdani42/nvim-web-devicons'
     }
     use {
         'hoob3rt/lualine.nvim',
         config = ui_cfg.lualine()
+    }
+    use {
+        'akinsho/bufferline.nvim',
+        config = ui_cfg.bufferline()
     }
 
     -- TOOLS

@@ -22,22 +22,48 @@ config.which_key = function ()
     wk.register({
         f = {
             name = 'Telescop',
-            f = { '<cmd>Telescop find_files<cr>', 'Find file', noremap=true },
-            r = { '<cmd>Telescop live_grep<cr>', 'Grep', noremap=true },
-            R = { '<cmd>Telescop live_grep grep_open_files=true<cr>', 'Grep in open files', noremap=true },
-            w = { '<cmd>Telescop current_buffer_fuzzy_find<cr>', 'Fuzzy find in current buffer', noremap=true },
-            b = { '<cmd>Telescop buffers<cr>', 'Buffers', noremap=true },
-            h = { '<cmd>Telescop help_tags<cr>', 'Help tags', noremap=true },
-            c = { '<cmd>Telescop builtin<cr>', 'Telescop builtin commands', noremap=true },
+            f = { '<cmd>Telescop find_files<cr>', 'Find file' },
+            r = { '<cmd>Telescop live_grep<cr>', 'Grep' },
+            R = { '<cmd>Telescop live_grep grep_open_files=true<cr>', 'Grep in open files' },
+            w = { '<cmd>Telescop current_buffer_fuzzy_find<cr>', 'Fuzzy find in current buffer' },
+            b = { '<cmd>Telescop buffers<cr>', 'Buffers' },
+            h = { '<cmd>Telescop help_tags<cr>', 'Help tags' },
+            c = { '<cmd>Telescop builtin<cr>', 'Telescop builtin commands' },
             g = {
                 name = 'Git',
-                f = { '<cmd>Telescop git_files<cr>', 'Git files', noremap=true },
-                C = { '<cmd>Telescop git_commits<cr>', 'Git commits', noremap=true },
-                c = { '<cmd>Telescop git_bcommits<cr>', 'Git bcommits', noremap=true },
-                s = { '<cmd>Telescop git_status<cr>', 'Git status', noremap=true }
+                f = { '<cmd>Telescop git_files<cr>', 'Git files' },
+                C = { '<cmd>Telescop git_commits<cr>', 'Git commits' },
+                c = { '<cmd>Telescop git_bcommits<cr>', 'Git bcommits' },
+                s = { '<cmd>Telescop git_status<cr>', 'Git status' }
+            }
+        },
+        b = {
+            name = 'Buffer',
+            j = {'<cmd>BufferLineCycleNext<cr>', 'Next buffer'},
+            k = {'<cmd>BufferLineCyclePrev<cr>', 'Prev buffer'},
+            n = {'<cmd>BufferLineMoveNext<cr>', 'Move next'},
+            p = {'<cmd>BufferLineMovePrev<cr>', 'Move prev'},
+            s = {'<cmd>BufferLinePick<cr>', 'Select'},
+            c = {'<cmd>BufferLinePickClose<cr>', 'Select to close'},
+            x = {'<cmd>BufferLineCloseLeft<cr>', 'Close left'},
+            X = {'<cmd>BufferLineCloseRight<cr>', 'Close right'},
+            o = {
+                name = 'Sort',
+                d = {'<cmd>BufferLineSortByDirectory<cr>', 'Sort by directory'},
+                e = {'<cmd>BufferLineSortByExtension<cr>', 'Sort by extension'},
+                D = {'<cmd>BufferLineSortByRelativeDirectory<cr>', 'Sort by relative directory'},
+                t = {'<cmd>BufferLineSortByTabs<cr>', 'Sort by tabs'},
             }
         }
-    }, { prefix = '<leader>' })
+    },
+    {
+        mode = 'n',
+        prefix = '<leader>',
+        buffer = nil,
+        silent = true,
+        noremap = true,
+        nowait = false
+    })
 end
 
 return config

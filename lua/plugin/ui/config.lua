@@ -47,4 +47,20 @@ config.lualine = function ()
     }
 end
 
+config.bufferline = function ()
+    require("bufferline").setup{
+        options = {
+            indicator_icon = '▎',
+            modified_icon = '●',
+            buffer_close_icon = '',
+            close_icon = '',
+            left_trunc_marker = '',
+            right_trunc_marker = '',
+            show_buffer_icons = true,
+            show_close_icon = false,
+            separator_style = 'thin'
+        }
+    }
+end
+
 return config
