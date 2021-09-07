@@ -62,6 +62,10 @@ local function plugin_load()
         'akinsho/bufferline.nvim',
         config = ui_cfg.bufferline()
     }
+    use {
+        'kyazdani42/nvim-tree.lua',
+        config = ui_cfg.nvimtree()
+    }
 
     -- TOOLS
     use {

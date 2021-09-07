@@ -54,6 +54,10 @@ config.which_key = function ()
                 D = {'<cmd>BufferLineSortByRelativeDirectory<cr>', 'Sort by relative directory'},
                 t = {'<cmd>BufferLineSortByTabs<cr>', 'Sort by tabs'},
             }
+        },
+        t = {
+            name = 'Tree',
+            t = {'<cmd>NvimTreeToggle<cr>', 'Toggle tree'}
         }
     },
     {
