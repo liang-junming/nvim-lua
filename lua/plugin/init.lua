@@ -85,8 +85,11 @@ local function plugin_load()
         config = tool_cfg.telescop()
     }
     use {
-        "folke/which-key.nvim",
+        'folke/which-key.nvim',
         config = tool_cfg.which_key()
+    }
+    use {
+        'dstein64/vim-startuptime'
     }
 
     packer.install()
