@@ -5,9 +5,10 @@ config.telescop = function ()
         defaults = {
             prompt_prefix = '🔍 ',
             selection_caret = '● ',
-            entry_prefix = "  ",
-        }
+            entry_prefix = '  ',
+        },
     }
+    require('telescope').load_extension('project')
 end
 
 config.which_key = function ()
@@ -29,6 +30,7 @@ config.which_key = function ()
             b = { '<cmd>Telescop buffers<cr>', 'Buffers' },
             h = { '<cmd>Telescop help_tags<cr>', 'Help tags' },
             c = { '<cmd>Telescop builtin<cr>', 'Telescop builtin commands' },
+            p = { '<cmd>Telescop project<cr>', 'Telescop project' },
             g = {
                 name = 'Git',
                 f = { '<cmd>Telescop git_files<cr>', 'Git files' },

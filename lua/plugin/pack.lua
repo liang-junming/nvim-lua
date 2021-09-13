@@ -63,7 +63,11 @@ local function load_packer()
     -- TOOLS
     use {
         'nvim-telescope/telescope.nvim',
-        requires = { 'nvim-lua/plenary.nvim' },
+        cmd = 'Telescope',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope-project.nvim'
+        },
         config = tool_cfg.telescop
     }
     use {
