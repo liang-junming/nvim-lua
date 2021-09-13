@@ -31,7 +31,7 @@ local function load_packer()
         'glepnir/dashboard-nvim',
         opt = true,
         event = 'BufWinEnter',
-        config = ui_cfg.dashboard
+        setup = ui_cfg.dashboard
     }
     use {
         'kyazdani42/nvim-web-devicons'
