@@ -108,6 +108,7 @@ function plugins.regist_command()
     cmd [[command! PackerClean lua require('plugin.pack').clean()]]
     cmd [[command! PackerCompile lua require('plugin.pack').compile()]]
     cmd [[autocmd User PackerComplete lua require('plugin.pack').compile()]]
+    cmd [[command! PackerStatus lua require('plugin.pack').status()]]
 end
 
 return plugins
