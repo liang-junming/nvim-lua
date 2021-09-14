@@ -66,7 +66,8 @@ local function load_packer()
         cmd = 'Telescope',
         requires = {
             'nvim-lua/plenary.nvim',
-            'nvim-telescope/telescope-project.nvim'
+            'nvim-telescope/telescope-project.nvim',
+            { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
         },
         config = tool_cfg.telescop
     }
