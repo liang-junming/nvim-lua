@@ -159,4 +159,13 @@ config.zen_mod = function ()
     }
 end
 
+config.twlight = function()
+    require("twilight").setup {
+        dimming = {
+            alpha = 0.25,
+        },
+        context = 6
+    }
+end
+
 return config

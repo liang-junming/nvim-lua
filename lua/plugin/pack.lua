@@ -63,6 +63,10 @@ local function load_packer()
         "folke/zen-mode.nvim",
         config = ui_cfg.zen_mod
     }
+    use {
+        "folke/twilight.nvim",
+        config = ui_cfg.twlight
+    }
 
     -- TOOLS
     use {
