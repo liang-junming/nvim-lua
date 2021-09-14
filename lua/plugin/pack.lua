@@ -97,6 +97,9 @@ local function load_packer()
         run = ':UpdateRemotePlugins',
         config = tool_cfg.wilder
     }
+    use {
+        'yianwillis/vimcdoc'
+    }
 end
 
 local plugins = setmetatable({}, {
