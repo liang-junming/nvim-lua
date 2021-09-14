@@ -100,6 +100,14 @@ local function load_packer()
     use {
         'yianwillis/vimcdoc'
     }
+
+    -- EDIT
+    use {
+        'steelsojka/pears.nvim',
+        config = function ()
+            require'pears'.setup()
+        end
+    }
 end
 
 local plugins = setmetatable({}, {
