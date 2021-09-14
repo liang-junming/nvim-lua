@@ -91,6 +91,12 @@ local function load_packer()
     use {
         'dstein64/vim-startuptime'
     }
+    use {
+        'gelguy/wilder.nvim',
+        event = 'CmdlineEnter',
+        run = ':UpdateRemotePlugins',
+        config = tool_cfg.wilder
+    }
 end
 
 local plugins = setmetatable({}, {
