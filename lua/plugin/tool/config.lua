@@ -19,6 +19,11 @@ config.telescop = function ()
     }
     require('telescope').load_extension('project')
     require('telescope').load_extension('fzf')
+    require('telescope').load_extension('vim_bookmarks')
+end
+
+config.bookmark = function ()
+    vim.g.bookmark_no_default_key_mappings = 1
 end
 
 config.which_key = function ()
@@ -70,6 +75,30 @@ config.which_key = function ()
         t = {
             name = 'Tree',
             t = {'<cmd>NvimTreeToggle<cr>', 'Toggle tree'}
+        },
+        m = {
+            name = 'BookMark',
+            m = {'<cmd>BookmarkToggle<cr>', 'Toggle'},
+            i = {'<cmd>BookmarkAnnotate<cr>', 'Annotate'},
+            n = {'<cmd>BookmarkNext<cr>', 'Next'},
+            p = {'<cmd>BookmarkPrev<cr>', 'Prev'},
+            c = {'<cmd>BookmarkClear<cr>', 'Clear'},
+            x = {'<cmd>BookmarkClearAll<cr>', 'Clear all'},
+            a = {
+                function ()
+                    local bookmark_actions = require('telescope').extensions.vim_bookmarks.actions
+                    require('telescope').extensions.vim_bookmarks.all {
+                        attach_mappings = function(_, map)
+                            map('n', 'dd', bookmark_actions.delete_selected_or_at_cursor)
+                            map('n', 'dc', bookmark_actions.delete_at_cursor)
+                            map('n', 'ds', bookmark_actions.delete_selected)
+                            map('n', 'da', bookmark_actions.delete_all)
+                            return true
+                        end
+                    }
+                end,
+                'Show all'
+            }
         }
     },
     {

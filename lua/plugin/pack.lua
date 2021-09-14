@@ -67,9 +67,14 @@ local function load_packer()
         requires = {
             'nvim-lua/plenary.nvim',
             'nvim-telescope/telescope-project.nvim',
-            { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+            { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+            'tom-anders/telescope-vim-bookmarks.nvim'
         },
         config = tool_cfg.telescop
+    }
+    use {
+        'MattesGroeger/vim-bookmarks',
+        config = tool_cfg.bookmark
     }
     use {
         'folke/which-key.nvim',
