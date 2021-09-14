@@ -59,6 +59,10 @@ local function load_packer()
         'lukas-reineke/indent-blankline.nvim',
         config = ui_cfg.indent_blankline
     }
+    use {
+        "folke/zen-mode.nvim",
+        config = ui_cfg.zen_mod
+    }
 
     -- TOOLS
     use {

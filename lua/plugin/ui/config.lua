@@ -151,4 +151,12 @@ config.indent_blankline = function()
     }
 end
 
+config.zen_mod = function ()
+    require('zen-mode').setup {
+        window = {
+            backdrop = 0.9
+        }
+    }
+end
+
 return config

@@ -99,7 +99,8 @@ config.which_key = function ()
                 end,
                 'Show all'
             }
-        }
+        },
+        z = {'<cmd>ZenMode<cr>', 'Zen mode toggle'}
     },
     {
         mode = 'n',
