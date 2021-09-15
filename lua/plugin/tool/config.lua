@@ -100,7 +100,9 @@ config.which_key = function ()
                 'Show all'
             }
         },
-        z = {'<cmd>ZenMode<cr>', 'Zen mode toggle'}
+        z = {'<cmd>ZenMode<cr>', 'Zen mode toggle'},
+        k = {'<cmd>call InterestingWords("n")<cr>', 'Keyword toggle'},
+        K = {'<cmd>call UncolorAllWords()<cr>', 'Keyword remove all'},
     },
     {
         mode = 'n',
@@ -130,6 +132,11 @@ config.lastplace = function ()
         lastplace_ignore_filetype = {"gitcommit", "gitrebase", "svn", "hgcommit"},
         lastplace_open_folds = true
     }
+end
+
+config.interestingwords = function ()
+    vim.api.nvim_set_keymap('n', 'n', '<cmd>call WordNavigation(0)<cr>', { noremap = true })
+    vim.api.nvim_set_keymap('n', 'N', '<cmd>call WordNavigation(1)<cr>', { noremap = true })
 end
 
 return config

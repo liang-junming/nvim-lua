@@ -107,6 +107,10 @@ local function load_packer()
         'ethanholz/nvim-lastplace',
         config = tool_cfg.lastplace
     }
+    use {
+        'vasconcelloslf/vim-interestingwords',
+        config = tool_cfg.interestingwords
+    }
 
     -- EDIT
     use {
