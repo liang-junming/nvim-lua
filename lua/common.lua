@@ -1,6 +1,6 @@
 local common = {}
 
-common.set_option = function()
+function set_option ()
     vim.o.number = true
     vim.o.relativenumber = true
     vim.o.laststatus = 2
@@ -20,9 +20,19 @@ common.set_option = function()
     vim.o.smartcase = true
 end
 
-common.set_global = function ()
+function set_global ()
     vim.g.mapleader = ' '
     vim.g.maplocalleader = ';'
+end
+
+function set_keymap ()
+    vim.api.nvim_set_keymap('!', 'jk', '<Esc>', { noremap = true })
+end
+
+function common.set_common ()
+    set_option()
+    set_global()
+    set_keymap()
 end
 
 return common
