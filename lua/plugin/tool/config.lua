@@ -103,9 +103,33 @@ config.which_key = function ()
         z = {'<cmd>ZenMode<cr>', 'Zen mode toggle'},
         k = {'<cmd>call InterestingWords("n")<cr>', 'Keyword toggle'},
         K = {'<cmd>call UncolorAllWords()<cr>', 'Keyword remove all'},
-    },
-    {
+        g = {
+            name = 'Go Motion',
+            c = {'<cmd>HopChar1<cr>', 'Go char1'},
+            g = {'<cmd>HopChar2<cr>', 'Go char2'},
+            w = {'<cmd>HopWord<cr>', 'Go word'},
+            l = {'<cmd>HopLine<cr>', 'Go line'},
+            s = {'<cmd>HopLineStart<cr>', 'Go line start'},
+        },
+    }, {
         mode = 'n',
+        prefix = '<leader>',
+        buffer = nil,
+        silent = true,
+        noremap = true,
+        nowait = false
+    })
+    wk.register({
+        g = {
+            name = 'Go Motion',
+            c = {'<cmd>HopChar1<cr>', 'Go char1'},
+            g = {'<cmd>HopChar2<cr>', 'Go char2'},
+            w = {'<cmd>HopWord<cr>', 'Go word'},
+            l = {'<cmd>HopLine<cr>', 'Go line'},
+            s = {'<cmd>HopLineStart<cr>', 'Go line start'},
+        }
+    }, {
+        mode = 'v',
         prefix = '<leader>',
         buffer = nil,
         silent = true,

@@ -20,6 +20,7 @@ local function load_packer()
     local use = packer.use
     local ui_cfg = require 'plugin.ui.config'
     local tool_cfg = require 'plugin.tool.config'
+    local edit_cfg = require 'plugin.edit.config'
 
     use {'wbthomason/packer.nvim', opt = true}
     -- UI
@@ -115,9 +116,12 @@ local function load_packer()
     -- EDIT
     use {
         'steelsojka/pears.nvim',
-        config = function ()
-            require'pears'.setup()
-        end
+        config = edit_cfg.pears
+    }
+    use {
+        'phaazon/hop.nvim',
+        as = 'hop',
+        config = edit_cfg.hop
     }
 end
 
