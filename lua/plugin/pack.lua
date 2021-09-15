@@ -100,6 +100,9 @@ local function load_packer()
     use {
         'yianwillis/vimcdoc'
     }
+    use {
+        'tyru/caw.vim'
+    }
 
     -- EDIT
     use {
