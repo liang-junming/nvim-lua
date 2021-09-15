@@ -103,6 +103,10 @@ local function load_packer()
     use {
         'tyru/caw.vim'
     }
+    use {
+        'ethanholz/nvim-lastplace',
+        config = tool_cfg.lastplace
+    }
 
     -- EDIT
     use {
