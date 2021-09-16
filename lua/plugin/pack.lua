@@ -21,6 +21,7 @@ local function load_packer()
     local ui_cfg = require 'plugin.ui.config'
     local tool_cfg = require 'plugin.tool.config'
     local edit_cfg = require 'plugin.edit.config'
+    local lang_cfg = require 'plugin.lang.config'
 
     use {'wbthomason/packer.nvim', opt = true}
     -- UI
@@ -39,6 +40,7 @@ local function load_packer()
     }
     use {
         'hoob3rt/lualine.nvim',
+        after = 'nvim-gps',
         config = ui_cfg.lualine
     }
     use {
@@ -122,6 +124,30 @@ local function load_packer()
         'phaazon/hop.nvim',
         as = 'hop',
         config = edit_cfg.hop
+    }
+
+    -- LANG
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        event = 'BufRead',
+        run = ':TSUpdate',
+        config = lang_cfg.treesitter
+    }
+    use {
+        'nvim-treesitter/nvim-treesitter-textobjects',
+        opt = true,
+        after = 'nvim-treesitter'
+    }
+    use {
+        'romgrk/nvim-treesitter-context',
+        opt = true,
+        after = 'nvim-treesitter'
+    }
+    use {
+        'SmiteshP/nvim-gps',
+        opt = true,
+        after = 'nvim-treesitter',
+        config = lang_cfg.gps
     }
 end
 

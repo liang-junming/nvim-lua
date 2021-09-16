@@ -41,6 +41,7 @@ config.dashboard = function ()
 end
 
 config.lualine = function ()
+    local gps = require("nvim-gps")
     require'lualine'.setup {
         options = {
             icons_enabled = true,
@@ -66,7 +67,12 @@ config.lualine = function ()
             lualine_z = {}
         },
         tabline = {},
-        extensions = {}
+        extensions = {},
+        sections = {
+            lualine_c = {
+                { gps.get_location, condition = gps.is_available },
+            }
+        }
     }
 end
 
