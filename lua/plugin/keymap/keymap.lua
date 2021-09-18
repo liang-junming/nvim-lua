@@ -135,6 +135,12 @@ function maps.lspsaga ()
             name = 'LSP',
             a = {'<cmd>Lspsaga code_action<cr>', 'LSP action'},
             d = {'<cmd>Lspsaga show_line_diagnostics<cr>', 'LSP show line diagnostics'},
+            w = {
+                name = 'Workspace',
+                a = {'<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>', 'LSP workspace add'},
+                r = {'<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>', 'LSP workspace remove'},
+                l = {'<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>', 'LSP workspace list'},
+            }
         }
     }, { mode = 'n', prefix = '<leader>', buffer = nil, silent = true, noremap = true, nowait = false })
 
