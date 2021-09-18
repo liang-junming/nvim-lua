@@ -15,7 +15,7 @@ function config.treesitter ()
             select = {
                 enable = true,
 
-                -- Automatically jump forward to textobj, similar to targets.vim 
+                -- Automatically jump forward to textobj, similar to targets.vim
                 lookahead = true,
 
                 keymaps = {
@@ -79,6 +79,75 @@ function config.gps ()
         },
         separator = ' > ',
     })
+end
+
+function config.lspconfig ()
+    -- Use an on_attach function to only map the following keys
+    -- after the language server attaches to the current buffer
+    local on_attach = function(client, bufnr)
+        local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+
+        -- Enable completion triggered by <c-x><c-o>
+        buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+    end
+    local function setup_servers()
+        require 'lspinstall'.setup()
+        local servers = require 'lspinstall'.installed_servers()
+        for _, server in pairs(servers) do
+            require 'lspconfig'[server].setup{
+                on_attach = on_attach
+            }
+        end
+    end
+
+    setup_servers()
+
+    -- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
+    require 'lspinstall'.post_install_hook = function ()
+        setup_servers() -- reload installed servers
+        vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
+    end
+end
+
+function config.lspsaga ()
+    require 'lspsaga'.init_lsp_saga({
+        -- add your config value here
+        -- default value
+        -- use_saga_diagnostic_sign = true
+        -- error_sign = '',
+        -- warn_sign = '',
+        -- hint_sign = '',
+        -- infor_sign = '',
+        -- dianostic_header_icon = '   ',
+        -- code_action_icon = ' ',
+        -- code_action_prompt = {
+            --   enable = true,
+            --   sign = true,
+            --   sign_priority = 20,
+            --   virtual_text = true,
+            -- },
+            -- finder_definition_icon = '  ',
+            -- finder_reference_icon = '  ',
+            -- max_preview_lines = 10, -- preview lines of lsp_finder and definition preview
+            -- finder_action_keys = {
+                --   open = 'o', vsplit = 's',split = 'i',quit = 'q',scroll_down = '<C-f>', scroll_up = '<C-b>' -- quit can be a table
+                -- },
+                -- code_action_keys = {
+                    --   quit = 'q',exec = '<CR>'
+                    -- },
+                    -- rename_action_keys = {
+                        --   quit = '<C-c>',exec = '<CR>'  -- quit can be a table
+                        -- },
+                        -- definition_preview_icon = '  '
+                        -- "single" "double" "round" "plus"
+                        -- border_style = "single"
+                        -- rename_prompt_prefix = '➤',
+                        -- if you don't use nvim-lspconfig you must pass your server name and
+                        -- the related filetypes into this table
+                        -- like server_filetype_map = {metals = {'sbt', 'scala'}}
+                        -- server_filetype_map = {}
+
+                    })
 end
 
 return config

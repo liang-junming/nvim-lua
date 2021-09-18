@@ -149,6 +149,17 @@ local function load_packer()
         after = 'nvim-treesitter',
         config = lang_cfg.gps
     }
+    use {
+        'neovim/nvim-lspconfig',
+        event = 'BufRead',
+        requires = { 'kabouzeid/nvim-lspinstall' },
+        config = lang_cfg.lspconfig
+    }
+    use {
+        'glepnir/lspsaga.nvim',
+        cmd = 'Lspsaga',
+        config = lang_cfg.lspsaga
+    }
 end
 
 local plugins = setmetatable({}, {
