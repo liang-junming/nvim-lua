@@ -157,7 +157,7 @@ local function load_packer()
     }
     use {
         'glepnir/lspsaga.nvim',
-        cmd = 'Lspsaga',
+        event = 'BufRead',
         config = lang_cfg.lspsaga
     }
 end

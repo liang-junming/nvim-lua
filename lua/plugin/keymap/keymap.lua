@@ -116,4 +116,34 @@ function maps.motion ()
     }, { mode = 'v', prefix = 'm', buffer = nil, silent = false, noremap = true, nowait = false })
 end
 
+function maps.lspsaga ()
+    vim.api.nvim_set_keymap('n', 'K', '<cmd>Lspsaga hover_doc<cr>', { noremap = true })
+    -- vim.api.nvim_set_keymap('n', '<C-d>', '<cmd>lua require("lspsaga.action").smart_scroll_with_saga(1)<cr>', { noremap = true })
+    -- vim.api.nvim_set_keymap('n', '<C-u>', '<cmd>lua require("lspsaga.action").smart_scroll_with_saga(-1)<cr>', { noremap = true })
+    vim.api.nvim_set_keymap('n', '[e', '<cmd>Lspsaga diagnostic_jump_prev<cr>', { noremap = true })
+    vim.api.nvim_set_keymap('n', ']e', '<cmd>Lspsaga diagnostic_jump_next<cr>', { noremap = true })
+
+    wk.register({
+        h = {'<cmd>Lspsaga lsp_finder<cr>', 'LSP finder'},
+        s = {'<cmd>Lspsaga signature_help<cr>', 'LSP signature help'},
+        r = {'<cmd>Lspsaga rename<cr>', 'LSP rename'},
+        d = {'<cmd>Lspsaga preview_definition<cr>', 'LSP preview definition'},
+    }, { mode = 'n', prefix = 'g', buffer = nil, silent = true, noremap = true, nowait = false })
+
+    wk.register({
+        l = {
+            name = 'LSP',
+            a = {'<cmd>Lspsaga code_action<cr>', 'LSP action'},
+            d = {'<cmd>Lspsaga show_line_diagnostics<cr>', 'LSP show line diagnostics'},
+        }
+    }, { mode = 'n', prefix = '<leader>', buffer = nil, silent = true, noremap = true, nowait = false })
+
+    wk.register({
+        l = {
+            name = 'LSP',
+            a = {'<cmd><C-u>Lspsaga range_code_action<cr>', 'LSP action'},
+        }
+    }, { mode = 'v', prefix = '<leader>', buffer = nil, silent = true, noremap = true, nowait = false })
+end
+
 return maps
