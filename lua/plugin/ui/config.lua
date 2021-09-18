@@ -90,6 +90,7 @@ config.bufferline = function ()
             separator_style = 'thin'
         }
     }
+    require('plugin.keymap.keymap').buffer()
 end
 
 config.nvimtree = function ()
@@ -130,6 +131,7 @@ config.nvimtree = function ()
         { key = "]c",                           cb = tree_cb("next_git_item") },
         { key = "-",                            cb = tree_cb("dir_up") },
     }
+    require('plugin.keymap.keymap').tree()
 end
 
 config.gitsigns = function ()
@@ -163,6 +165,7 @@ config.zen_mod = function ()
             backdrop = 0.9
         }
     }
+    require('plugin.keymap.keymap').zenmode()
 end
 
 config.twlight = function()
