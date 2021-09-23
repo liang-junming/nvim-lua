@@ -22,6 +22,7 @@ local function load_packer()
     local tool_cfg = require 'plugin.tool.config'
     local edit_cfg = require 'plugin.edit.config'
     local lang_cfg = require 'plugin.lang.config'
+    local comp_cfg = require 'plugin.comp.config'
 
     use {'wbthomason/packer.nvim', opt = true}
     -- UI
@@ -117,10 +118,6 @@ local function load_packer()
 
     -- EDIT
     use {
-        'steelsojka/pears.nvim',
-        config = edit_cfg.pears
-    }
-    use {
         'phaazon/hop.nvim',
         as = 'hop',
         config = edit_cfg.hop
@@ -159,6 +156,21 @@ local function load_packer()
         'glepnir/lspsaga.nvim',
         event = 'BufRead',
         config = lang_cfg.lspsaga
+    }
+
+    --COMPLETION
+    use {
+        'hrsh7th/nvim-cmp',
+        event = 'BufRead',
+        config = comp_cfg.nvimcmp,
+        requires = {
+            { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' },
+            { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
+            { 'L3MON4D3/LuaSnip', after = 'nvim-cmp', config = comp_cfg.luasnip },
+            { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' },
+            { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
+            { 'windwp/nvim-autopairs', after = 'nvim-cmp', config = comp_cfg.autopairs }
+        }
     }
 end
 
