@@ -11,7 +11,8 @@ local function load_packer()
     packer.init({
         compile_path = compile_path,
         git = {
-            clone_timeout = 300
+            clone_timeout = 300,
+            default_url_format = 'https://ghproxy.com/https://github.com/%s'
         },
         disable_commands = true
     })
@@ -186,7 +187,7 @@ local plugins = setmetatable({}, {
 function plugins.promise_install()
     if fn.empty(fn.glob(install_path)) > 0 then
         print('Cloneing packer.nvim...')
-        fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
+        fn.system({'git', 'clone', 'https://ghproxy.com/https://github.com/wbthomason/packer.nvim', install_path})
         load_packer()
         packer.install()
     end
