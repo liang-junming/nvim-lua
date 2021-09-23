@@ -41,14 +41,13 @@ end
 
 config.wilder = function ()
     vim.cmd [[
-    call wilder#enable_cmdline_enter()
-    set wildcharm=<Tab>
-    cmap <expr> <Tab> wilder#in_context() ? wilder#next() : "\<Tab>"
-    cmap <expr> <S-Tab> wilder#in_context() ? wilder#previous() : "\<S-Tab>"
+call wilder#setup({'modes': [':', '/', '?']})
+call wilder#set_option('use_python_remote_plugin', 0)
 
-    " only / and ? are enabled by default
-    call wilder#set_option('modes', ['/', '?', ':'])
-    ]]
+call wilder#set_option('pipeline', [wilder#branch(wilder#cmdline_pipeline({'use_python': 0,'fuzzy': 1, 'fuzzy_filter': wilder#lua_fzy_filter()}),wilder#vim_search_pipeline(), [wilder#check({_, x -> empty(x)}), wilder#history(), wilder#result({'draw': [{_, x -> ' ' . x}]})])])
+
+call wilder#set_option('renderer', wilder#renderer_mux({':': wilder#popupmenu_renderer({'highlighter': wilder#lua_fzy_highlighter(), 'left': [wilder#popupmenu_devicons()], 'right': [' ', wilder#popupmenu_scrollbar()]}), '/': wilder#wildmenu_renderer({'highlighter': wilder#lua_fzy_highlighter()})}))
+]]
 end
 
 config.lastplace = function ()

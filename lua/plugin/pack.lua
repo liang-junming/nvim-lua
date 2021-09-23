@@ -99,6 +99,7 @@ local function load_packer()
         'gelguy/wilder.nvim',
         event = 'CmdlineEnter',
         run = ':UpdateRemotePlugins',
+        requires = { 'romgrk/fzy-lua-native', after = 'wilder.nvim' },
         config = tool_cfg.wilder
     }
     use {
