@@ -49,6 +49,7 @@ function config.nvimcmp ()
                     buffer = "[BUF]",
                     path = "[PATH]",
                     luasnip = "[SNIP]",
+                    nvim_lua = "[LUA]",
                 })[entry.source.name]
 
                 return vim_item
@@ -85,6 +86,7 @@ function config.nvimcmp ()
             { name = 'nvim_lsp' },
             -- For luasnip user.
             { name = 'luasnip' },
+            { name = 'nvim_lua' },
             { name = 'buffer' },
         }
     })
