@@ -28,8 +28,8 @@ function maps.buffer ()
     wk.register({
         b = {
             name = 'Buffer',
-            j = {'<cmd>BufferLineCycleNext<cr>', 'Next buffer'},
-            k = {'<cmd>BufferLineCyclePrev<cr>', 'Prev buffer'},
+            l = {'<cmd>BufferLineCycleNext<cr>', 'Next buffer'},
+            h = {'<cmd>BufferLineCyclePrev<cr>', 'Prev buffer'},
             n = {'<cmd>BufferLineMoveNext<cr>', 'Move next'},
             p = {'<cmd>BufferLineMovePrev<cr>', 'Move prev'},
             s = {'<cmd>BufferLinePick<cr>', 'Select'},
