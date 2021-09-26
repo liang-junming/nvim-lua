@@ -133,11 +133,11 @@ local function load_packer()
         opt = true,
         after = 'nvim-treesitter'
     }
-    use {
-        'romgrk/nvim-treesitter-context',
-        opt = true,
-        after = 'nvim-treesitter'
-    }
+    -- use {
+    --     'romgrk/nvim-treesitter-context',
+    --     opt = true,
+    --     after = 'nvim-treesitter'
+    -- }
     use {
         'SmiteshP/nvim-gps',
         opt = true,
