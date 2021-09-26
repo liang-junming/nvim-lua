@@ -4,7 +4,7 @@ local function set_option ()
     vim.o.number = true
     vim.o.relativenumber = true
     vim.o.laststatus = 2
-    vim.o.scrolloff = 8 --光标距离页面底端永远保留2行位置
+    -- vim.o.scrolloff = 8 --光标距离页面底端永远保留2行位置
     vim.o.encoding = 'utf-8'
     vim.o.cursorline = true
     vim.o.timeoutlen = 300
@@ -27,6 +27,10 @@ end
 
 local function set_keymap ()
     vim.api.nvim_set_keymap('!', 'jk', '<Esc>', { noremap = true })
+    vim.api.nvim_set_keymap('n', '<C-j>', 'j', { noremap = true })
+    vim.api.nvim_set_keymap('n', '<C-k>', 'k', { noremap = true })
+    vim.api.nvim_set_keymap('n', 'j', '<C-e>j', { noremap = true })
+    vim.api.nvim_set_keymap('n', 'k', '<C-y>k', { noremap = true })
 end
 
 function common.set_common ()
