@@ -116,6 +116,16 @@ function maps.motion ()
     }, { mode = 'v', prefix = 'm', buffer = nil, silent = false, noremap = true, nowait = false })
 end
 
+function maps.treesitter ()
+    wk.register({
+        t = {
+            name = 'Tree/Treesitter',
+            p = {'<cmd>TSPlaygroundToggle<cr>', 'TS playground toggle'},
+            h = {'<cmd>TSHighlightCapturesUnderCursor<cr>', 'TS highlight info'},
+        },
+    }, { mode = 'n', prefix = '<leader>', buffer = nil, silent = true, noremap = true, nowait = false })
+end
+
 function maps.lspsaga ()
     vim.api.nvim_set_keymap('n', 'K', '<cmd>Lspsaga hover_doc<cr>', { noremap = true })
     -- vim.api.nvim_set_keymap('n', '<C-d>', '<cmd>lua require("lspsaga.action").smart_scroll_with_saga(1)<cr>', { noremap = true })
