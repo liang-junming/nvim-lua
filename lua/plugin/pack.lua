@@ -68,6 +68,11 @@ local function load_packer()
         "folke/zen-mode.nvim",
         config = ui_cfg.zen_mod
     }
+    use {
+        'norcalli/nvim-colorizer.lua',
+        event = 'BufRead',
+        config = ui_cfg.colorizer
+    }
 
     -- TOOLS
     use {

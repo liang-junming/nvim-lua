@@ -175,12 +175,16 @@ config.zen_mod = function ()
     require('plugin.keymap.keymap').zenmode()
 end
 
-config.twlight = function()
-    require("twilight").setup {
-        dimming = {
-            alpha = 0.25,
-        },
-        context = 6
+function config.colorizer ()
+    require 'colorizer'.setup {
+        '*'; -- Highlight all files, but customize some others.
+        css = {
+            RRGGBBAA = true,        -- #RRGGBBAA hex codes
+            rgb_fn   = true,        -- CSS rgb() and rgba() functions
+            hsl_fn   = true,        -- CSS hsl() and hsla() functions
+            css      = true,        -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+            css_fn   = true,        -- Enable all CSS *functions*: rgb_fn, hsl_fn
+        }; -- Enable parsing rgb(...) functions in css.
     }
 end
 
