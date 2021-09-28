@@ -119,6 +119,15 @@ local function load_packer()
         'vasconcelloslf/vim-interestingwords',
         config = tool_cfg.interestingwords
     }
+    use {
+        'TimUntersberger/neogit',
+        cmd = 'Neogit',
+        requires = {
+            { 'nvim-lua/plenary.nvim', after = 'neogit' },
+            { 'sindrets/diffview.nvim', after = 'neogit' },
+        },
+        config = tool_cfg.neogit
+    }
 
     -- EDIT
     use {

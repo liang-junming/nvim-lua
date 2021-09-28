@@ -162,4 +162,15 @@ function maps.lspsaga ()
     }, { mode = 'v', prefix = '<leader>', buffer = nil, silent = true, noremap = true, nowait = false })
 end
 
+function maps.premap ()
+    wk.register({
+        g = {
+            name = 'Git',
+            s = {'<cmd>Neogit<cr>', 'Neogit status'},
+            v = {'<cmd>Neogit kind=vsplit<cr>', 'Neogit status (vsplit)'},
+            c = {'<cmd>Neogit commit<cr>', 'Neogit commit'},
+        }
+    }, { mode = 'n', prefix = '<leader>', buffer = nil, silent = true, noremap = true, nowait = false })
+end
+
 return maps
