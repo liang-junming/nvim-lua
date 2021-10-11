@@ -1,7 +1,7 @@
 local maps = {}
 local wk = require('which-key')
 
-function maps.telescop ()
+local function telescop ()
     wk.register({
         f = {
             name = 'Telescop',
@@ -162,7 +162,7 @@ function maps.lspsaga ()
     }, { mode = 'v', prefix = '<leader>', buffer = nil, silent = true, noremap = true, nowait = false })
 end
 
-function maps.premap ()
+local function neogit ()
     wk.register({
         g = {
             name = 'Git',
@@ -171,6 +171,11 @@ function maps.premap ()
             c = {'<cmd>Neogit commit<cr>', 'Neogit commit'},
         }
     }, { mode = 'n', prefix = '<leader>', buffer = nil, silent = true, noremap = true, nowait = false })
+end
+
+function maps.premap ()
+    telescop()
+    neogit()
 end
 
 return maps
