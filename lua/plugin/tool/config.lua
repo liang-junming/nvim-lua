@@ -6,7 +6,41 @@ config.telescop = function ()
             prompt_prefix = '🔍 ',
             selection_caret = '● ',
             entry_prefix = '  ',
+            layout_config = {
+                bottom_pane = {
+                    height = 20,
+                    prompt_position = "top"
+                },
+                center = {
+                    height = 0.5,
+                    preview_cutoff = 40,
+                    prompt_position = "bottom",
+                    width = 0.5
+                },
+                cursor = {
+                    height = 0.5,
+                    preview_cutoff = 40,
+                    width = 0.5
+                },
+                horizontal = {
+                    height = 0.5,
+                    preview_cutoff = 120,
+                    prompt_position = "bottom",
+                    width = 0.8
+                },
+                vertical = {
+                    height = 0.5,
+                    preview_cutoff = 40,
+                    prompt_position = "bottom",
+                    width = 0.5
+                }
+            }
         },
+        -- pickers = {
+        --     find_files = {
+        --         theme = 'ivy',
+        --     }
+        -- },
         extensions = {
             fzf = {
                 fuzzy = true,                    -- false will only do exact matching
