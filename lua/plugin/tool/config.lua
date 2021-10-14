@@ -1,6 +1,7 @@
 local config = {}
 
 config.telescop = function ()
+    local layout_height = 12
     require('telescope').setup {
         defaults = {
             prompt_prefix = '🔍 ',
@@ -36,11 +37,308 @@ config.telescop = function ()
                 }
             }
         },
-        -- pickers = {
-        --     find_files = {
-        --         theme = 'ivy',
-        --     }
-        -- },
+        pickers = {
+            find_files = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            git_files = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            grep_string = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            live_grep = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            file_browser = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            buffers = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            oldfiles = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            commands = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            tags = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            command_history = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            search_history = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            help_tags = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            man_pages = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            marks = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            colorscheme = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            quickfix = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            loclist = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            jumplist = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            vim_options = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            registers = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            autocommands = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            spell_suggest = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            keymaps = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            filetypes = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            highlights = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            current_buffer_fuzzy_find = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            current_buffer_tags = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            resume = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            pickers = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            lsp_references = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            lsp_document_symbols = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            lsp_workspace_symbols = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            lsp_dynamic_workspace_symbols = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            lsp_code_actions = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            lsp_range_code_actions = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            lsp_document_diagnostics = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            lsp_workspace_diagnostics = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            lsp_implementations = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            lsp_definitions = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            lsp_type_definitions = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            git_commits = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            git_bcommits = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            git_branches = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            git_status = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            git_stash = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            treesitter = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            planets = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            builtin = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            reloader = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+            symbols = {
+                theme = 'ivy',
+                layout_config = {
+                    height = layout_height
+                }
+            },
+        },
         extensions = {
             fzf = {
                 fuzzy = true,                    -- false will only do exact matching
