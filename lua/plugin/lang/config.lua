@@ -86,23 +86,6 @@ function config.treesitter ()
     require('plugin.keymap.keymap').treesitter()
 end
 
-function config.gps ()
-    require("nvim-gps").setup({
-        icons = {
-            ["class-name"] = ' ',      -- Classes and class-like objects
-            ["function-name"] = ' ',   -- Functions
-            ["method-name"] = ' '      -- Methods (functions inside class-like objects)
-        },
-        -- Disable any languages individually over here
-        -- Any language not disabled here is enabled by default
-        languages = {
-            -- ["bash"] = false,
-            -- ["go"] = false,
-        },
-        separator = ' > ',
-    })
-end
-
 function config.lspconfig ()
     -- Use an on_attach function to only map the following keys
     -- after the language server attaches to the current buffer

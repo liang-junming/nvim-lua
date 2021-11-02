@@ -43,7 +43,6 @@ local function load_packer()
     }
     use {
         'hoob3rt/lualine.nvim',
-        after = 'nvim-gps',
         config = ui_cfg.lualine
     }
     use {
@@ -158,12 +157,6 @@ local function load_packer()
     --     opt = true,
     --     after = 'nvim-treesitter'
     -- }
-    use {
-        'SmiteshP/nvim-gps',
-        opt = true,
-        after = 'nvim-treesitter',
-        config = lang_cfg.gps
-    }
     use {
         'neovim/nvim-lspconfig',
         event = 'BufRead',
