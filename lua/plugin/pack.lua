@@ -164,8 +164,9 @@ local function load_packer()
         config = lang_cfg.lspconfig
     }
     use {
-        'glepnir/lspsaga.nvim',
+        'jasonrhansen/lspsaga.nvim',
         event = 'BufRead',
+        branch = 'finder-preview-fixes',
         config = lang_cfg.lspsaga
     }
 
