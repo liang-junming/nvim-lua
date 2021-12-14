@@ -95,44 +95,24 @@ function config.lspconfig ()
         -- Enable completion triggered by <c-x><c-o>
         buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
     end
-    local function setup_servers()
-        require 'lspinstall'.setup()
-        local servers = require 'lspinstall'.installed_servers()
 
-        local capabilities = vim.lsp.protocol.make_client_capabilities()
+    -- nvim-lsp-installer
+    local lsp_installer = require("nvim-lsp-installer")
 
-        capabilities.textDocument.completion.completionItem.documentationFormat = {
-            'markdown', 'plaintext'
-        }
-        capabilities.textDocument.completion.completionItem.snippetSupport = true
-        capabilities.textDocument.completion.completionItem.preselectSupport = true
-        capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
-        capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
-        capabilities.textDocument.completion.completionItem.deprecatedSupport = true
-        capabilities.textDocument.completion.completionItem.commitCharactersSupport =
-        true
-        capabilities.textDocument.completion.completionItem.tagSupport = {
-            valueSet = {1}
-        }
-        capabilities.textDocument.completion.completionItem.resolveSupport = {
-            properties = {'documentation', 'detail', 'additionalTextEdits'}
-        }
+    -- Register a handler that will be called for all installed servers.
+    -- Alternatively, you may also register handlers on specific server instances instead (see example below).
+    lsp_installer.on_server_ready(function(server)
+        local opts = {}
 
-        for _, server in pairs(servers) do
-            require 'lspconfig'[server].setup{
-                capabilities = capabilities,
-                on_attach = on_attach
-            }
-        end
-    end
+        -- (optional) Customize the options passed to the server
+        -- if server.name == "tsserver" then
+        --     opts.root_dir = function() ... end
+        -- end
 
-    setup_servers()
-
-    -- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
-    require 'lspinstall'.post_install_hook = function ()
-        setup_servers() -- reload installed servers
-        vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
-    end
+        -- This setup() function is exactly the same as lspconfig's setup function.
+        -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+        server:setup(opts)
+    end)
 end
 
 function config.lspsaga ()

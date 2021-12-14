@@ -160,7 +160,7 @@ local function load_packer()
     use {
         'neovim/nvim-lspconfig',
         event = 'BufRead',
-        requires = { 'kabouzeid/nvim-lspinstall' },
+        requires = { 'williamboman/nvim-lsp-installer' },
         config = lang_cfg.lspconfig
     }
     use {
