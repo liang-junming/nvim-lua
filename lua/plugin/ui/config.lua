@@ -69,7 +69,7 @@ config.lualine = function ()
                 'diff',
                 {
                     'diagnostics',
-                    sources = { 'nvim_lsp', 'coc' }
+                    sources = { 'nvim_diagnostic', 'coc' }
                 }
             },
             lualine_c = {
