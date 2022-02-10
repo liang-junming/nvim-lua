@@ -142,11 +142,12 @@ local function load_packer()
         run = ':TSUpdate',
         config = lang_cfg.treesitter
     }
-    use {
-        'nvim-treesitter/nvim-treesitter-textobjects',
-        opt = true,
-        after = 'nvim-treesitter'
-    }
+    -- nvim-treesitter-textobjects 目前不稳定
+    -- use {
+    --     'nvim-treesitter/nvim-treesitter-textobjects',
+    --     opt = true,
+    --     after = 'nvim-treesitter'
+    -- }
     use {
         'nvim-treesitter/playground',
         opt = true,

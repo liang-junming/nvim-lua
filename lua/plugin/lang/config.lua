@@ -13,56 +13,65 @@ function config.treesitter ()
             -- Instead of true it can also be a list of languages
             additional_vim_regex_highlighting = false,
         },
-        textobjects = {
-            select = {
-                enable = true,
-
-                -- Automatically jump forward to textobj, similar to targets.vim
-                lookahead = true,
-
-                keymaps = {
-                    -- You can use the capture groups defined in textobjects.scm
-                    ["af"] = "@function.outer",
-                    ["if"] = "@function.inner",
-                    ["ac"] = "@class.outer",
-                    ["ic"] = "@class.inner",
-                    ["ab"] = "@block.outer",
-                    ["ib"] = "@block.inner",
-
-                    -- Or you can define your own textobjects like this
-                    ["iF"] = {
-                        python = "(function_definition) @function",
-                        cpp = "(function_definition) @function",
-                        c = "(function_definition) @function",
-                        java = "(method_declaration) @function",
-                    },
-                },
+        incremental_selection = {
+            enable = true,
+            keymaps = {
+                init_selection = "gnn",
+                node_incremental = "grn",
+                scope_incremental = "grc",
+                node_decremental = "grm",
             },
-            move = {
-                enable = true,
-                set_jumps = true, -- whether to set jumps in the jumplist
-                goto_next_start = {
-                    ["]f"] = "@function.outer",
-                    ["]c"] = "@class.outer",
-                    ["]b"] = "@block.outer",
-                },
-                goto_previous_start = {
-                    ["[f"] = "@function.outer",
-                    ["[c"] = "@class.outer",
-                    ["[b"] = "@block.outer",
-                },
-                goto_next_end = {
-                    ["]F"] = "@function.outer",
-                    ["]C"] = "@class.outer",
-                    ["]B"] = "@block.outer",
-                },
-                goto_previous_end = {
-                    ["[F"] = "@function.outer",
-                    ["[C"] = "@class.outer",
-                    ["[B"] = "@block.outer",
-                },
-            }
         },
+        -- textobjects = {
+        --     select = {
+        --         enable = true,
+        -- 
+        --         -- Automatically jump forward to textobj, similar to targets.vim
+        --         lookahead = true,
+        -- 
+        --         keymaps = {
+        --             -- You can use the capture groups defined in textobjects.scm
+        --             ["af"] = "@function.outer",
+        --             ["if"] = "@function.inner",
+        --             ["ac"] = "@class.outer",
+        --             ["ic"] = "@class.inner",
+        --             ["ab"] = "@block.outer",
+        --             ["ib"] = "@block.inner",
+        -- 
+        --             -- Or you can define your own textobjects like this
+        --             ["iF"] = {
+        --                 python = "(function_definition) @function",
+        --                 cpp = "(function_definition) @function",
+        --                 c = "(function_definition) @function",
+        --                 java = "(method_declaration) @function",
+        --             },
+        --         },
+        --     },
+        --     move = {
+        --         enable = true,
+        --         set_jumps = true, -- whether to set jumps in the jumplist
+        --         goto_next_start = {
+        --             ["]f"] = "@function.outer",
+        --             ["]c"] = "@class.outer",
+        --             ["]b"] = "@block.outer",
+        --         },
+        --         goto_previous_start = {
+        --             ["[f"] = "@function.outer",
+        --             ["[c"] = "@class.outer",
+        --             ["[b"] = "@block.outer",
+        --         },
+        --         goto_next_end = {
+        --             ["]F"] = "@function.outer",
+        --             ["]C"] = "@class.outer",
+        --             ["]B"] = "@block.outer",
+        --         },
+        --         goto_previous_end = {
+        --             ["[F"] = "@function.outer",
+        --             ["[C"] = "@class.outer",
+        --             ["[B"] = "@block.outer",
+        --         },
+        --     }
+        -- },
         playground = {
             enable = true,
             disable = {},
