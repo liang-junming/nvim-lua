@@ -76,15 +76,11 @@ local function load_packer()
 
     -- TOOLS
     use {
-        'nvim-telescope/telescope.nvim',
-        cmd = 'Telescope',
+        'junegunn/fzf.vim',
         requires = {
-            'nvim-lua/plenary.nvim',
-            'nvim-telescope/telescope-project.nvim',
-            { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
-            'tom-anders/telescope-vim-bookmarks.nvim'
+            'junegunn/fzf'
         },
-        config = tool_cfg.telescop
+        config = tool_cfg.fzf
     }
     use {
         'MattesGroeger/vim-bookmarks',

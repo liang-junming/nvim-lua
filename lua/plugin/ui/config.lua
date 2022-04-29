@@ -14,7 +14,7 @@ config.color_theme = function ()
 end
 
 config.dashboard = function ()
-    vim.g.dashboard_default_executive = 'telescope'
+    vim.g.dashboard_default_executive = 'fzf'
     vim.g.dashboard_custom_header = {
         [[ ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗]],
         [[ ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║]],
@@ -33,8 +33,8 @@ config.dashboard = function ()
             command = 'DashboardFindHistory'
         },
         find_project = {
-            description = {' Project find               comma f p '},
-            command = 'Telescope project'
+            description = {' Mark find                  comma f m '},
+            command = 'DashboardJumpMark'
         },
         file_new = {
             description = {' File new                   comma f n '},

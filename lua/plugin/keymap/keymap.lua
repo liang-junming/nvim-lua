@@ -1,24 +1,24 @@
 local maps = {}
 local wk = require('which-key')
 
-local function telescop ()
+function maps.fzf ()
     wk.register({
         f = {
-            name = 'Telescop',
-            f = { '<cmd>Telescop find_files<cr>', 'Find file' },
-            r = { '<cmd>Telescop live_grep<cr>', 'Grep' },
-            R = { '<cmd>Telescop live_grep grep_open_files=true<cr>', 'Grep in open files' },
-            w = { '<cmd>Telescop current_buffer_fuzzy_find<cr>', 'Fuzzy find in current buffer' },
-            b = { '<cmd>Telescop buffers<cr>', 'Buffers' },
-            h = { '<cmd>Telescop help_tags<cr>', 'Help tags' },
-            c = { '<cmd>Telescop builtin<cr>', 'Telescop builtin commands' },
-            p = { '<cmd>Telescop project<cr>', 'Telescop project' },
+            name = 'Fzf',
+            f = { '<cmd>Files<cr>', 'Find file' },
+            r = { '<cmd>Rg<cr>', 'Grep' },
+            L = { '<cmd>Lines<cr>', 'Lines in loaded buffers' },
+            l = { '<cmd>BLines<cr>', 'Lines in current buffer' },
+            b = { '<cmd>Buffers<cr>', 'Buffers' },
+            h = { '<cmd>Helptags<cr>', 'Help tags' },
+            c = { '<cmd>Commands<cr>', 'Commands' },
+            p = { '<cmd>History/<cr>', 'Search history' },
             g = {
                 name = 'Git',
-                f = { '<cmd>Telescop git_files<cr>', 'Git files' },
-                C = { '<cmd>Telescop git_commits<cr>', 'Git commits' },
-                c = { '<cmd>Telescop git_bcommits<cr>', 'Git bcommits' },
-                s = { '<cmd>Telescop git_status<cr>', 'Git status' }
+                f = { '<cmd>GFiles<cr>', 'Git files' },
+                C = { '<cmd>Commits<cr>', 'Git commits' },
+                c = { '<cmd>BCommits<cr>', 'Git commits for the current buffer' },
+                s = { '<cmd>GFiles?<cr>', 'Git status' }
             }
         }
     }, { mode = 'n', prefix = '<leader>', buffer = nil, silent = true, noremap = true, nowait = false })
@@ -174,7 +174,6 @@ local function neogit ()
 end
 
 function maps.premap ()
-    telescop()
     neogit()
 end
 
