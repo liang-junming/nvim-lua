@@ -155,13 +155,9 @@ local function load_packer()
     --     after = 'nvim-treesitter'
     -- }
     use {
-        'williamboman/nvim-lsp-installer',
-        event = 'BufRead',
-        requires = {
-            'neovim/nvim-lspconfig',
-            opt = true,
-            config = lang_cfg.lspconfig
-        }
+        'neovim/nvim-lspconfig',
+        requires = { 'williamboman/nvim-lsp-installer' },
+        config = lang_cfg.lspconfig
     }
     use {
         'tami5/lspsaga.nvim',
