@@ -78,7 +78,8 @@ local function load_packer()
     use {
         'junegunn/fzf.vim',
         requires = {
-            'junegunn/fzf'
+            'junegunn/fzf',
+            'r08ertliu/cscope-fzf'
         },
         config = tool_cfg.fzf
     }
