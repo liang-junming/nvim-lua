@@ -127,20 +127,7 @@ end
 
 function config.lspsaga ()
     require 'lspsaga'.init_lsp_saga({
-        error_sign = '',
-        warn_sign = '',
-        hint_sign = '',
-        infor_sign = '',
-        dianostic_header_icon = '   ',
-        code_action_icon = ' ',
-        finder_definition_icon = '  ',
-        finder_reference_icon = '  ',
-        finder_action_keys = {
-            open = 'o', vsplit = 'v', split = 's', quit = 'q', scroll_down = '<C-d>', scroll_up = '<C-u>' -- quit can be a table
-        },
-        definition_preview_icon = '  ',
-        -- "single" "double" "round" "plus"
-        border_style = 'round'
+        border_style = "rounded",
     })
     require('plugin.keymap.keymap').lspsaga()
 end

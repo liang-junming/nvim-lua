@@ -161,7 +161,7 @@ local function load_packer()
         config = lang_cfg.lspconfig
     }
     use {
-        'tami5/lspsaga.nvim',
+        'glepnir/lspsaga.nvim',
         event = 'BufRead',
         config = lang_cfg.lspsaga
     }

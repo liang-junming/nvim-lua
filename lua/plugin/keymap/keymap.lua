@@ -127,24 +127,22 @@ function maps.treesitter ()
 end
 
 function maps.lspsaga ()
-    vim.api.nvim_set_keymap('n', 'K', '<cmd>Lspsaga hover_doc<cr>', { noremap = true })
-    -- vim.api.nvim_set_keymap('n', '<C-d>', '<cmd>lua require("lspsaga.action").smart_scroll_with_saga(1)<cr>', { noremap = true })
-    -- vim.api.nvim_set_keymap('n', '<C-u>', '<cmd>lua require("lspsaga.action").smart_scroll_with_saga(-1)<cr>', { noremap = true })
-    vim.api.nvim_set_keymap('n', '[e', '<cmd>Lspsaga diagnostic_jump_prev<cr>', { noremap = true })
-    vim.api.nvim_set_keymap('n', ']e', '<cmd>Lspsaga diagnostic_jump_next<cr>', { noremap = true })
-
     wk.register({
         h = {'<cmd>Lspsaga lsp_finder<cr>', 'LSP finder'},
-        s = {'<cmd>Lspsaga signature_help<cr>', 'LSP signature help'},
-        r = {'<cmd>Lspsaga rename<cr>', 'LSP rename'},
-        d = {'<cmd>Lspsaga preview_definition<cr>', 'LSP preview definition'},
+        d = {'<cmd>Lspsaga peek_definition<cr>', 'LSP peek definition'},
     }, { mode = 'n', prefix = 'g', buffer = nil, silent = true, noremap = true, nowait = false })
 
     wk.register({
         l = {
             name = 'LSP',
             a = {'<cmd>Lspsaga code_action<cr>', 'LSP action'},
-            d = {'<cmd>Lspsaga show_line_diagnostics<cr>', 'LSP show line diagnostics'},
+            r = {'<cmd>Lspsaga rename<cr>', 'LSP rename'},
+            d = {'<cmd>Lspsaga show_line_diagnostics<cr>', 'LSP show cursor diagnostics'},
+            l = {'<cmd>Lspsaga show_line_diagnostics<cr>', 'LSP show line diagnostics'},
+            p = {'<cmd>Lspsaga diagnostic_jump_prev<cr>', 'LSP diagnostic jump prev'},
+            n = {'<cmd>Lspsaga diagnostic_jump_next<cr>', 'LSP diagnostic jump next'},
+            o = {'<cmd>Lspsaga outline<cr>', 'LSP outline'},
+            h = {'<cmd>Lspsaga hover_doc<cr>', 'LSP hover doc'},
             w = {
                 name = 'Workspace',
                 a = {'<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>', 'LSP workspace add'},
