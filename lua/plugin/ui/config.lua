@@ -2,15 +2,15 @@ local config = {}
 
 config.color_theme = function ()
     vim.o.termguicolors = true
-    vim.o.background = 'light'
+    vim.o.background = 'dark'
 
     -- color theme 'nord' config
     vim.g.nord_contrast = false
     vim.g.nord_borders = false
-    vim.g.nord_disable_background = false
+    vim.g.nord_disable_background = true
     vim.g.nord_italic = true
 
-    vim.cmd [[colorscheme nord]]
+    vim.cmd [[colorscheme sialoquent]]
 end
 
 config.dashboard = function ()
@@ -91,7 +91,18 @@ end
 config.bufferline = function ()
     require("bufferline").setup{
         options = {
-            indicator_icon = '▎',
+            separator_style = 'slant',
+            diagnostics = "nvim_lsp",
+            indicator = {
+                style = 'none',
+            },
+            offsets = {{
+                filetype = "NvimTree",
+                text = "File Explorer",
+                highlight = "Directory",
+                text_align = "left"
+            }},
+            color_icons = true,
             modified_icon = '●',
             buffer_close_icon = '',
             close_icon = '',
@@ -99,7 +110,6 @@ config.bufferline = function ()
             right_trunc_marker = '',
             show_buffer_icons = true,
             show_close_icon = false,
-            separator_style = 'thin'
         }
     }
     require('plugin.keymap.keymap').buffer()

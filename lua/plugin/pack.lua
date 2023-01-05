@@ -47,6 +47,8 @@ local function load_packer()
     }
     use {
         'akinsho/bufferline.nvim',
+        tag = "v3.*",
+        requires = 'nvim-tree/nvim-web-devicons',
         config = ui_cfg.bufferline
     }
     use {
