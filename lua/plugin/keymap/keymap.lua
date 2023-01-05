@@ -171,7 +171,13 @@ local function neogit ()
     }, { mode = 'n', prefix = '<leader>', buffer = nil, silent = true, noremap = true, nowait = false })
 end
 
-function maps.premap ()
+function maps.alpha ()
+    wk.register({
+        a = {'<cmd>Alpha<cr>', 'Alpha'},
+    }, { mode = 'n', prefix = '<leader>', buffer = nil, silent = true, noremap = true, nowait = false })
+end
+
+function maps.premap()
     neogit()
 end
 

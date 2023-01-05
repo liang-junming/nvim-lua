@@ -13,38 +13,9 @@ config.color_theme = function ()
     vim.cmd [[colorscheme sialoquent]]
 end
 
-config.dashboard = function ()
-    vim.g.dashboard_default_executive = 'fzf'
-    vim.g.dashboard_custom_header = {
-        [[ ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗]],
-        [[ ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║]],
-        [[ ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║]],
-        [[ ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║]],
-        [[ ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║]],
-        [[ ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝]],
-    }
-    vim.g.dashboard_custom_section = {
-        find_file = {
-            description = {' File find                  comma f f '},
-            command = 'DashboardFindFile'
-        },
-        find_history = {
-            description = {' File history               comma f e '},
-            command = 'DashboardFindHistory'
-        },
-        find_project = {
-            description = {' Mark find                  comma f m '},
-            command = 'DashboardJumpMark'
-        },
-        file_new = {
-            description = {' File new                   comma f n '},
-            command = 'DashboardNewFile'
-        },
-        find_word = {
-            description = {' Word find                  comma f w '},
-            command = 'DashboardFindWord'
-        }
-    }
+config.alpha = function ()
+    require'alpha'.setup(require'alpha.themes.startify'.config)
+    require('plugin.keymap.keymap').alpha()
 end
 
 config.lualine = function ()

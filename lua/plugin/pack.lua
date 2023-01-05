@@ -37,10 +37,9 @@ local function load_packer()
         config = ui_cfg.color_theme
     }
     use {
-        'glepnir/dashboard-nvim',
-        opt = true,
-        event = 'BufWinEnter',
-        setup = ui_cfg.dashboard
+        'goolord/alpha-nvim',
+        requires = { 'nvim-tree/nvim-web-devicons' },
+        config = ui_cfg.alpha
     }
     use {
         'kyazdani42/nvim-web-devicons'
