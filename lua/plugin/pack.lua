@@ -29,7 +29,8 @@ local function load_packer()
     -- UI
     use {
         'liang-junming/vim-sialoquent',
-        requires = 'liang-junming/nord.nvim',
+        -- requires = 'liang-junming/nord.nvim',
+        requires = 'arcticicestudio/nord-vim',
         config = ui_cfg.color_theme
     }
     use {
