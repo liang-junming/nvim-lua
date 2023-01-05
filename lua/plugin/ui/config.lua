@@ -10,8 +10,7 @@ config.color_theme = function ()
     -- vim.g.nord_disable_background = true
     -- vim.g.nord_italic = true
 
-    -- vim.cmd [[colorscheme sialoquent]]
-    vim.cmd [[colorscheme nord]]
+    vim.cmd [[colorscheme sialoquent]]
 end
 
 config.dashboard = function ()
