@@ -6,6 +6,7 @@ end
 
 config.bookmark = function ()
     vim.g.bookmark_no_default_key_mappings = 1
+    vim.g.bookmark_auto_close = 1
     require('plugin.keymap.keymap').bookmark()
 end
 

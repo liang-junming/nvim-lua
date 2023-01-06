@@ -66,21 +66,7 @@ function maps.bookmark ()
             p = {'<cmd>BookmarkPrev<cr>', 'Prev'},
             c = {'<cmd>BookmarkClear<cr>', 'Clear'},
             x = {'<cmd>BookmarkClearAll<cr>', 'Clear all'},
-            a = {
-                function ()
-                    local bookmark_actions = require('telescope').extensions.vim_bookmarks.actions
-                    require('telescope').extensions.vim_bookmarks.all {
-                        attach_mappings = function(_, map)
-                            map('n', 'dd', bookmark_actions.delete_selected_or_at_cursor)
-                            map('n', 'dc', bookmark_actions.delete_at_cursor)
-                            map('n', 'ds', bookmark_actions.delete_selected)
-                            map('n', 'da', bookmark_actions.delete_all)
-                            return true
-                        end
-                    }
-                end,
-                'Show all'
-            }
+            a = {'<cmd>BookmarkShowAll<cr>', 'Show all'}
         },
     }, { mode = 'n', prefix = '<leader>', buffer = nil, silent = true, noremap = true, nowait = false })
 end
