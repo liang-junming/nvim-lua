@@ -126,8 +126,10 @@ function config.lspconfig ()
 end
 
 function config.lspsaga ()
-    require 'lspsaga'.init_lsp_saga({
-        border_style = "rounded",
+    require 'lspsaga'.setup({
+        ui = {
+            border = "rounded",
+        }
     })
     require('plugin.keymap.keymap').lspsaga()
 end
