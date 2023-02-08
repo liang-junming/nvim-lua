@@ -146,7 +146,7 @@ function maps.lspsaga ()
     }, { mode = 'v', prefix = '<leader>', buffer = nil, silent = true, noremap = true, nowait = false })
 end
 
-local function neogit ()
+function maps.neogit ()
     wk.register({
         g = {
             name = 'Git',
@@ -163,8 +163,5 @@ function maps.alpha ()
     }, { mode = 'n', prefix = '<leader>', buffer = nil, silent = true, noremap = true, nowait = false })
 end
 
-function maps.premap()
-    neogit()
-end
 
 return maps

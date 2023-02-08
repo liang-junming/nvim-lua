@@ -130,8 +130,6 @@ config.nvimtree = function ()
             }
         }
     })
-
-    require('plugin.keymap.keymap').tree()
 end
 
 config.gitsigns = function ()

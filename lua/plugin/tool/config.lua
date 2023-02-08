@@ -19,8 +19,6 @@ config.which_key = function ()
             group = ' ', -- symbol prepended to a group
         }
     }
-
-    require('plugin.keymap.keymap').premap()
 end
 
 config.wilder = function ()
