@@ -216,6 +216,32 @@ plug.plug_load = function ()
                 }
             }
         }
+    }, {
+        ui = {
+            icons = {
+                cmd = " ",
+                config = "",
+                event = "ﳅ ",
+                ft = " ",
+                init = " ",
+                import = " ",
+                keys = " ",
+                lazy = "鈴 ",
+                loaded = "●",
+                not_loaded = "○",
+                plugin = " ",
+                runtime = " ",
+                source = " ",
+                start = "󰅕 ",
+                task = "✔ ",
+                list = {
+                    "●",
+                    "➜",
+                    "★",
+                    "‒",
+                },
+            },
+        }
     })
 end
 
