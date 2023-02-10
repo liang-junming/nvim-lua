@@ -191,6 +191,7 @@ plug.plug_load = function ()
 
         {
             'glepnir/lspsaga.nvim',
+            dependencies = "nvim-tree/nvim-web-devicons",
             event = 'BufRead',
             config = lang_cfg.lspsaga
         },
